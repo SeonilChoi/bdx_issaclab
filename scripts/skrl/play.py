@@ -117,6 +117,43 @@ from isaaclab_tasks.utils.hydra import hydra_task_config
 
 import bdx.tasks  # noqa: F401
 
+PLAY_COMMAND_SEQUENCE = (
+    ("forward", (0.10, 0.00, 0.0)),
+    ("side", (0.00, 0.10, 0.0)),
+    ("turn", (0.0, 0.00, 0.2)),
+    ("backward", (-0.10, 0.00, 0.0)),
+    ("diagonal", (0.08, 0.08, 0.0)),
+    ("stand", (0.00, 0.00, 0.0)),
+    ("forward", (0.10, 0.00, 0.0)),
+)
+
+
+def _overwrite_observation_commands(obs, command_obs: torch.Tensor):
+    """Keep policy observations consistent after overriding environment commands."""
+    if isinstance(obs, torch.Tensor):
+        obs = obs.clone()
+        obs[..., -command_obs.shape[-1] :] = command_obs
+        return obs
+    if isinstance(obs, dict):
+        return {key: _overwrite_observation_commands(value, command_obs) for key, value in obs.items()}
+    return obs
+
+
+def _apply_play_command_sequence(env, obs):
+    required_attrs = ("commands", "command_scale", "episode_length_buf", "max_episode_length")
+    if not all(hasattr(env, attr) for attr in required_attrs):
+        return obs
+
+    command_values = torch.tensor(
+        [command for _, command in PLAY_COMMAND_SEQUENCE],
+        dtype=torch.float32,
+        device=env.device,
+    )
+    episode_progress = env.episode_length_buf.float() / max(float(env.max_episode_length), 1.0)
+    command_ids = torch.clamp((episode_progress * len(PLAY_COMMAND_SEQUENCE)).long(), max=len(PLAY_COMMAND_SEQUENCE) - 1)
+    env.commands[:] = command_values.index_select(0, command_ids)
+    return _overwrite_observation_commands(obs, env.commands * env.command_scale)
+
 # config shortcuts
 if args_cli.agent is None:
     algorithm = args_cli.algorithm.lower()
@@ -177,6 +214,10 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, expe
     # convert to single-agent instance if required by the RL algorithm
     if isinstance(env.unwrapped, DirectMARLEnv) and algorithm in ["ppo"]:
         env = multi_agent_to_single_agent(env)
+    command_env = env.unwrapped
+    print("[INFO] Play command sequence:")
+    for index, (name, command) in enumerate(PLAY_COMMAND_SEQUENCE, start=1):
+        print(f"  {index}. {name}: {command}")
 
     # get environment (step) dt for real-time evaluation
     try:
@@ -213,6 +254,7 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, expe
 
     # reset environment
     obs, _ = env.reset()
+    obs = _apply_play_command_sequence(command_env, obs)
     states = env.state()
     timestep = 0
     # simulate environment
@@ -231,6 +273,7 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, expe
                 actions = outputs[-1].get("mean_actions", outputs[0])
             # env stepping
             obs, _, _, _, _ = env.step(actions)
+            obs = _apply_play_command_sequence(command_env, obs)
             states = env.state()
         if args_cli.video:
             timestep += 1
