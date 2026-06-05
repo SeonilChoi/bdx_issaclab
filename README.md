@@ -1,4 +1,15 @@
-# Template for Isaac Lab Projects
+# BDX AMP
+
+![BDX AMP banner](images/image.png)
+
+BDX AMP is an Isaac Lab project for training a BDX robot walking policy with adversarial motion priors.
+
+## Training
+
+```bat
+C:\projects\bdx>python scripts\skrl\train.py --task Template-Bdx-Amp-Direct-v0 --algorithm amp
+C:\projects\bdx>python scripts\skrl\train.py --task Template-Bdx-Amp-Direct-v0 --algorithm amp --headless
+```
 
 ## Overview
 
