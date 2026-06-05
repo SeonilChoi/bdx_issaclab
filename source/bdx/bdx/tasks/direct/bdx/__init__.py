@@ -22,3 +22,13 @@ gym.register(
         "skrl_cfg_entry_point": f"{agents.__name__}:skrl_ppo_cfg.yaml",
     },
 )
+
+gym.register(
+    id="Template-Bdx-Amp-Direct-v0",
+    entry_point=f"{__name__}.bdx_amp_env:BdxAmpEnv",
+    disable_env_checker=True,
+    kwargs={
+        "env_cfg_entry_point": f"{__name__}.bdx_amp_env_cfg:BdxAmpEnvCfg",
+        "skrl_amp_cfg_entry_point": f"{agents.__name__}:skrl_amp_cfg.yaml",
+    },
+)
