@@ -7,9 +7,8 @@ BDX project is an Isaac Lab project for training a BDX robot walking policy with
 ## Training
 
 ```bat
-C:\projects\bdx>python scripts\skrl\train.py --task Template-Bdx-Amp-Direct-v0 --algorithm amp --num_envs 512
-C:\projects\bdx>python scripts\skrl\train.py --task Template-Bdx-Amp-Direct-v0 --algorithm amp --num_envs 512 --headless
-C:\projects\bdx>python scripts\skrl\train.py --task Template-Bdx-Amp-Direct-v0 --algorithm amp --num_envs 512 --checkpoint <CHECKPOINT_PATH>
+C:\projects\bdx>python scripts\skrl\train.py --task Template-Bdx-Amp-Direct-v0 --algorithm amp
+C:\projects\bdx>python scripts\skrl\train.py --task Template-Bdx-Amp-Direct-v0 --algorithm amp --headless
 ```
 
 ## Play
