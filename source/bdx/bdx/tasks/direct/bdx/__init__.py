@@ -13,17 +13,6 @@ from . import agents
 
 
 gym.register(
-    id="Template-Bdx-Direct-v0",
-    entry_point=f"{__name__}.bdx_env:BdxEnv",
-    disable_env_checker=True,
-    kwargs={
-        "env_cfg_entry_point": f"{__name__}.bdx_env_cfg:BdxEnvCfg",
-        "skrl_amp_cfg_entry_point": f"{agents.__name__}:skrl_amp_cfg.yaml",
-        "skrl_cfg_entry_point": f"{agents.__name__}:skrl_ppo_cfg.yaml",
-    },
-)
-
-gym.register(
     id="Template-Bdx-Amp-Direct-v0",
     entry_point=f"{__name__}.bdx_amp_env:BdxAmpEnv",
     disable_env_checker=True,

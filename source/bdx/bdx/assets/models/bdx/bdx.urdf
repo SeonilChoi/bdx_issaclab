@@ -157,14 +157,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/pelvis.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/pelvis.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/pelvis.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/pelvis.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -193,14 +193,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.057251 -0.103809 -0.081036"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/left_foot.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/left_foot.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.057251 -0.103809 -0.081036"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/left_foot.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/left_foot.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -214,14 +214,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.102251 -0.119009 -0.211036"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/left_shin.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/left_shin.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.102251 -0.119009 -0.211036"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/left_shin.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/left_shin.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -235,14 +235,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.022945 -0.119009 -0.288744"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/left_thigh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/left_thigh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.022945 -0.119009 -0.288744"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/left_thigh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/left_thigh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -256,14 +256,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.040411 -0.049408 -0.287959"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/left_hip.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/left_hip.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.040411 -0.049408 -0.287959"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/left_hip.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/left_hip.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -277,14 +277,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.033111 -0.046658 -0.363959"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/left_hip_rotation.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/left_hip_rotation.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.033111 -0.046658 -0.363959"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/left_hip_rotation.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/left_hip_rotation.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -313,14 +313,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.057251 0.103809 -0.081036"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/right_foot.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/right_foot.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.057251 0.103809 -0.081036"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/right_foot.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/right_foot.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -334,14 +334,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.102251 0.119009 -0.211036"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/right_shin.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/right_shin.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.102251 0.119009 -0.211036"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/right_shin.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/right_shin.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -355,14 +355,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.022945 0.119009 -0.288744"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/right_thigh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/right_thigh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.022945 0.119009 -0.288744"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/right_thigh.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/right_thigh.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -376,14 +376,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.040411 0.049408 -0.287959"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/right_hip.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/right_hip.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.040411 0.049408 -0.287959"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/right_hip.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/right_hip.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -397,14 +397,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.033111 0.046658 -0.363959"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/right_hip_rotation.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/right_hip_rotation.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.033111 0.046658 -0.363959"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/right_hip_rotation.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/right_hip_rotation.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -418,14 +418,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.135142 0.06885 -0.563402"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/ear_right.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/ear_right.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.135142 0.06885 -0.563402"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/ear_right.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/ear_right.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -439,14 +439,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.135142 -0.06915 -0.563402"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/ear_left.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/ear_left.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.135142 -0.06915 -0.563402"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/ear_left.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/ear_left.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -475,14 +475,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.031508 -0.00085 -0.562171"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/head_body_roll.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/head_body_roll.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.031508 -0.00085 -0.562171"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/head_body_roll.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/head_body_roll.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -496,14 +496,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.008384 -0.00085 -0.535021"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/head_body_yaw.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/head_body_yaw.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.008384 -0.00085 -0.535021"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/head_body_yaw.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/head_body_yaw.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -517,14 +517,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.008683 -0.00015 -0.506051"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/head_body_pitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/head_body_pitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.008683 -0.00015 -0.506051"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/head_body_pitch.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/head_body_pitch.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -538,14 +538,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.056339 -0.0119 -0.395171"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/neck.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/neck.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.056339 -0.0119 -0.395171"/>
       <geometry>
-        <mesh filename="C:/imitation_learning/imitation/source/imitation/imitation/assets/meshes/bdx/neck.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="../../meshes/bdx/neck.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
