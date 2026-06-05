@@ -2,7 +2,7 @@
 
 ![BDX AMP banner](images/image.png)
 
-BDX AMP is an Isaac Lab project for training a BDX robot walking policy with adversarial motion priors.
+BDX project is an Isaac Lab project for training a BDX robot walking policy with adversarial motion priors.
 
 ## Training
 
