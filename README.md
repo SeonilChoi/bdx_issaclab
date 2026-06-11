@@ -7,21 +7,24 @@ BDX project is an Isaac Lab project for training a BDX robot walking policy with
 ## Training
 
 ```bat
-C:\projects\bdx>python scripts\skrl\train.py --task Template-Bdx-Amp-Direct-v0 --algorithm amp
-C:\projects\bdx>python scripts\skrl\train.py --task Template-Bdx-Amp-Direct-v0 --algorithm amp --headless
+python scripts\skrl\train.py --task Template-Bdx-Amp-Direct-v0 --algorithm amp
+python scripts\skrl\train.py --task Template-Bdx-Amp-Direct-v0 --algorithm amp --headless
 ```
 
 ## Play
 
 ```bat
-C:\projects\bdx>python scripts\skrl\play.py --task Template-Bdx-Amp-Direct-v0 --algorithm amp --num_envs 1 --checkpoint <CHECKPOINT_PATH>
+python scripts\skrl\play.py --task Template-Bdx-Amp-Direct-v0 --algorithm amp --num_envs 1 --checkpoint <CHECKPOINT_PATH>
 ```
+
+`play.py` loads a trained checkpoint and runs the BDX walking policy in simulation for visual validation.
+
+Commands are defined in `PLAY_COMMAND_SEQUENCE` as `(linear_x, linear_y, yaw)`, then written to `env.commands`
+and added to the policy observation as `env.commands * env.command_scale`.
 
 <p align="left">
   <img src="images/play.gif" alt="BDX play simulation" width="480">
 </p>
-
-`play.py` loads a trained checkpoint and runs the BDX walking policy in simulation for visual validation.
 
 
 ## Overview

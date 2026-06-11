@@ -35,6 +35,7 @@ class BdxAmpEnv(DirectRLEnv):
             self.device,
             joint_names=self.robot.data.joint_names,
         )
+        self.amp_head_neck_feature_indices = self._build_amp_head_neck_feature_indices()
 
         joint_pos_limits = getattr(self.robot.data, "soft_joint_pos_limits", None)
         if joint_pos_limits is None:
@@ -81,6 +82,32 @@ class BdxAmpEnv(DirectRLEnv):
             getattr(self, "_imu_sensor_paths", []),
             getattr(self, "_lab_imu_sensor", None),
         )
+
+    def _build_amp_head_neck_feature_indices(self) -> torch.Tensor:
+        """Select head/neck joint features from the base AMP observation."""
+        joint_names = list(self.motion_loader._joint_names)
+        feature_indices: list[int] = []
+        joint_position_offset = 1 + 6 + 3 + 3
+        joint_velocity_offset = joint_position_offset + len(joint_names) * 6
+
+        for joint_name in self.cfg.amp_head_neck_joint_names:
+            if joint_name not in joint_names:
+                raise ValueError(f"AMP head/neck joint is missing from robot joints: {joint_name}")
+
+            joint_index = joint_names.index(joint_name)
+            position_start = joint_position_offset + joint_index * 6
+            feature_indices.extend(range(position_start, position_start + 6))
+            feature_indices.append(joint_velocity_offset + joint_index)
+
+        return torch.tensor(feature_indices, dtype=torch.long, device=self.device)
+
+    def _augment_amp_observation(self, amp_obs: torch.Tensor) -> torch.Tensor:
+        if self.cfg.amp_head_neck_observation_repeats <= 0:
+            return amp_obs
+
+        head_neck_features = amp_obs.index_select(1, self.amp_head_neck_feature_indices)
+        extra_features = [head_neck_features] * self.cfg.amp_head_neck_observation_repeats
+        return torch.cat((amp_obs, *extra_features), dim=-1)
 
     def _setup_scene(self):
         self.robot = Articulation(self.cfg.robot)
@@ -173,6 +200,7 @@ class BdxAmpEnv(DirectRLEnv):
             amp_local_toe_positions[:, 0],
             amp_local_toe_positions[:, 1],
         )
+        amp_obs = self._augment_amp_observation(amp_obs)
         policy_state_obs = compute_policy_obs(
             policy_orientation_quat_normalized_heading,
             policy_angular_velocity_normalized_heading,
@@ -410,6 +438,7 @@ class BdxAmpEnv(DirectRLEnv):
                 times=history_times,
             )
         )
+        amp_observation = self._augment_amp_observation(amp_observation)
         return amp_observation.view(num_samples, -1)
 
 

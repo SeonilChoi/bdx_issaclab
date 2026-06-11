@@ -12,8 +12,15 @@ from isaaclab.utils import configclass
 
 
 BDX_NUM_JOINTS = 16
-BDX_AMP_OBSERVATION_SPACE = 1 + 6 + 3 + 3 + BDX_NUM_JOINTS * 6 + BDX_NUM_JOINTS + 3 + 3
+BDX_BASE_AMP_OBSERVATION_SPACE = 1 + 6 + 3 + 3 + BDX_NUM_JOINTS * 6 + BDX_NUM_JOINTS + 3 + 3
 BDX_POLICY_OBSERVATION_SPACE = 6 + 3 + BDX_NUM_JOINTS * 6 + BDX_NUM_JOINTS + 3 + 3
+BDX_AMP_HEAD_NECK_JOINT_NAMES = ("head_pitch", "head_yaw")
+BDX_AMP_HEAD_NECK_OBSERVATION_REPEATS = 2
+BDX_AMP_HEAD_NECK_FEATURE_SPACE = len(BDX_AMP_HEAD_NECK_JOINT_NAMES) * (6 + 1)
+BDX_AMP_OBSERVATION_SPACE = (
+    BDX_BASE_AMP_OBSERVATION_SPACE
+    + BDX_AMP_HEAD_NECK_FEATURE_SPACE * BDX_AMP_HEAD_NECK_OBSERVATION_REPEATS
+)
 
 
 @configclass
@@ -28,6 +35,9 @@ class BdxAmpEnvCfg(DirectRLEnvCfg):
     state_space = 0
     num_amp_observations = 2
     amp_observation_space = BDX_AMP_OBSERVATION_SPACE
+    base_amp_observation_space = BDX_BASE_AMP_OBSERVATION_SPACE
+    amp_head_neck_joint_names = BDX_AMP_HEAD_NECK_JOINT_NAMES
+    amp_head_neck_observation_repeats = BDX_AMP_HEAD_NECK_OBSERVATION_REPEATS
     action_scale = 0.6
 
     command_linear_x_range = (-0.2719, 0.2745)

@@ -83,7 +83,7 @@ agent:
   time_limit_bootstrap: false
   experiment:
     directory: C:\projects\bdx\logs\skrl\humanoid_amp_walk
-    experiment_name: 2026-06-05_10-07-14_amp_torch
+    experiment_name: 2026-06-09_19-23-21_amp_torch
     write_interval: 1000
     checkpoint_interval: 5000
 trainer:
