@@ -17,6 +17,13 @@ C:\projects\bdx>python scripts\skrl\train.py --task Template-Bdx-Amp-Direct-v0 -
 C:\projects\bdx>python scripts\skrl\play.py --task Template-Bdx-Amp-Direct-v0 --algorithm amp --num_envs 1 --checkpoint <CHECKPOINT_PATH>
 ```
 
+<p align="left">
+  <img src="images/play.gif" alt="BDX play simulation" width="480">
+</p>
+
+`play.py` loads a trained checkpoint and runs the BDX walking policy in simulation for visual validation.
+
+
 ## Overview
 
 This project/repository serves as a template for building projects or extensions based on Isaac Lab.
