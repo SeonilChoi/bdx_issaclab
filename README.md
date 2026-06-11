@@ -19,13 +19,12 @@ python scripts\skrl\play.py --task Template-Bdx-Amp-Direct-v0 --algorithm amp --
 
 `play.py` loads a trained checkpoint and runs the BDX walking policy in simulation for visual validation.
 
-Commands are defined in `PLAY_COMMAND_SEQUENCE` as `(linear_x, linear_y, yaw)`, then written to `env.commands`
-and added to the policy observation as `env.commands * env.command_scale`.
-
 <p align="left">
   <img src="images/play.gif" alt="BDX play simulation" width="480">
 </p>
 
+Commands are defined in `PLAY_COMMAND_SEQUENCE` as `(linear_x, linear_y, yaw)`, then written to `env.commands`
+and added to the policy observation as `env.commands * env.command_scale`.
 
 ## Overview
 
